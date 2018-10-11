@@ -1,0 +1,85 @@
+<div class="section sec-career">
+    <div class="item item-career" id="1">
+        <div class="left-ele">
+            <p class="title">
+                    사물인터넷기반 하이브리드 웹 앱 개발자과정<br/>
+            </p>
+        </div>
+        <div class="right-ele">
+            <p class="disc">
+                2017.09 - 2018.03<br/><br/>
+                Soldesk<br/>
+                Java<br/>
+                JavaScript<br/>
+                J-Query<br/>
+                Spring Framework<br/>
+                My-SQL<br/>
+                Oracle<br/><br/>
+            </p>
+        </div>
+    </div>
+    <div class="item item-career" id="2">
+        <div class="left-ele">
+            <p class="title">
+                    이솔루션<br/>
+                    인턴<br/>
+            </p>
+        </div>
+        <div class="right-ele">
+            <p class="disc">
+                2016.12 - 2017.02<br/><br/>
+                    안드로이드 개발<br/>
+            </p>
+        </div>
+    </div>
+    <div class="item item-career" id="3">
+        <div class="left-ele">
+            <p class="title">
+                    멀티미디어공학과 사무실<br/>
+                    근로장학생<br/>
+            </p>
+        </div>
+        <div class="right-ele">
+            <p class="disc">
+                2016.03 - 2016.11<br/><br/>
+                    문서작업(한글, 엑셀)<br/>
+                    서류 정리<br/>
+            </p>
+        </div>
+    </div>
+    <div class="item item-career" id="4">
+        <div class="left-ele">
+            <p class="title">
+                    멀티미디어공학과<br/>
+                    안동대학교<br/>
+            </p>
+        </div>
+        <div class="right-ele">
+            <p class="disc">
+                2012.03 - 2018.02<br/><br/>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+	$(document).ready(function(){
+	    timeOutFunc();
+	})
+	function activeItem ( e ){
+	    var activeId = "#" + e;
+	    $(activeId).addClass("active");
+	}
+	
+	function timeOutFunc() {
+	    var itemLength = $(".item").length;
+	    for (var i =0; i<itemLength; i++ ) {
+	        (function(index) {
+	            var findId = $('.item')[i].id;
+	            setTimeout(function() { 
+	                activeItem ( findId );
+	            }, i * 70);
+	        })(i);
+	    }
+	}
+</script>

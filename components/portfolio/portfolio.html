@@ -1,0 +1,70 @@
+<div class="section sec-portfolio">
+	<div class="item item-portfolio" id="putfoot">
+		<div class="title">
+			풋살장 예약 및 랜덤매칭 웹페이지<br /> Spring Framework / JAVA
+		</div>
+		<div class="arrow">
+			<img src="./images/arrow.svg" alt="">
+		</div>
+	</div>
+	<div class="item item-portfolio" id="board">
+		<div class="title">
+			게시판 웹 페이지<br /> Java / JavaScript
+		</div>
+		<div class="arrow">
+			<img src="./images/arrow.svg" alt="">
+		</div>
+	</div>
+	<div class="item item-portfolio" id="team">
+		<div class="title">
+			멀티미디어 컨텐츠 기획 설계<br /> 대학교 조별과제
+		</div>
+		<div class="arrow">
+			<img src="./images/arrow.svg" alt="">
+		</div>
+	</div>
+</div>
+
+<script>
+	$(document).ready(function() {
+		portfolioFunc();
+		timeOutFunc()
+	})
+
+	function pageReverse(id) {
+		var btn = "#" + id;
+		var url = "./components/detail/" + id + ".html";
+		$(btn).click(function() {
+			$(".wrapper").addClass("inactive");
+			setTimeout(function() {
+				$("#app").load(url);
+			}, 300);
+		});
+	}
+
+	function portfolioFunc() {
+		var itemLength = $(".item-portfolio").length;
+		for (var i = 0; i < itemLength; i++) {
+			var id = $('.item-portfolio')[i].id;
+			pageReverse(id);
+		}
+	}
+
+	function activeItem(e) {
+		var activeId = "#" + e;
+		$(activeId).addClass("active");
+	}
+
+	function timeOutFunc() {
+		var itemLength = $(".item").length;
+		for (var i = 0; i < itemLength; i++) {
+			(function(index) {
+				var findId = $('.item')[i].id;
+				setTimeout(function() {
+					activeItem(findId);
+				}, i * 70);
+			})(i);
+
+		}
+	}
+</script>

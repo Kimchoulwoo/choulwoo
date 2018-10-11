@@ -1,0 +1,37 @@
+<div class="section">
+	<div class="item" id="1">
+		<p class="info-disc">
+			E-mail : <br/>choul3416@naver.com<br />
+			<br/>
+			Github : <br/><a href="https://github.com/Kimchoulwoo">https://github.com/Kimchoulwoo</a></br>
+		</p>
+	</div>
+	<div class="item" id="2">
+		<p class="info-disc">
+			Interested in...<br /> 
+			Sport / Game / Movie<br />
+			Travel / Sleep
+		</p>
+	</div>
+</div>
+<script>
+	$(document).ready(function() {
+		timeOutFunc();
+	})
+	function activeItem(e) {
+		var activeId = "#" + e;
+		$(activeId).addClass("active");
+	}
+
+	function timeOutFunc() {
+		var itemLength = $(".item").length;
+		for (var i = 0; i < itemLength; i++) {
+			(function(index) {
+				var findId = $('.item')[i].id;
+				setTimeout(function() {
+					activeItem(findId);
+				}, i * 70);
+			})(i);
+		}
+	}
+</script>
