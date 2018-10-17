@@ -10,12 +10,12 @@ $(".btn-back").click(function(){
 })
 
 $("#link-putfoot").click(function(){
-    var url = ""; 
+    var url = "https://github.com/Kimchoulwoo/SpringWeb"; 
     window.open(url);
 });
 
 $("#link-board").click(function(){
-    var url = ""; 
+    var url = "https://github.com/Kimchoulwoo/board"; 
     window.open(url);
 });
 
